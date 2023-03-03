@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises day02</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const root = document.querySelector(".root");
+      const user = {
+        name: "Lucas Freitas",
+        country: "Brazil",
+        title: "Single",
+        gender: "Male",
+        email: "lucasmatheus.profissional@gmail.com",
+        phone: "+55 096 981092620",
+      };
+      const userInfos = (
+        <div style={{ lineHeight: 1.5, fontFamily: "Roboto" }}>
+          <h1>{user.name}</h1>
+          <p>Country : {user.country}</p>
+          <p>Title : {user.title}</p>
+          <p>Gender: {user.gender}</p>
+          <p>Email: {user.email}</p>
+          <p>Phone: {user.phone}</p>
+        </div>
+      );
+      const mainStyle = {
+        width: "80%",
+        margin: "auto",
+        padding: 25,
+      };
+      const main = (
+        <main style={{ backgroundColor: "rgb(195, 255, 255)" }}>
+          <div style={mainStyle}>{userInfos}</div>{" "}
+        </main>
+      );
+      const footer = (
+        <footer
+          style={{
+            backgroundColor: "rgb(195, 255, 255)",
+            bottom: "0",
+            position: "fixed",
+            width: "100%",
+            textAlign: "center",
+            lineHeight: 1.5,
+          }}
+        >
+          Copyright 2023
+        </footer>
+      );
+      const app = (
+        <div className="app">
+          {main}
+          {footer}
+        </div>
+      );
+
+      ReactDOM.render(app, root);
+    </script>
+  </body>
+</html>
