@@ -2,27 +2,8 @@ import './App.css';
 import { ComponentTitle } from './components/JsxTitle';
 import Table from './components/NumberGenerator';
 import WorldPopulation from './components/WorldPopulation';
-import { tenHighestPopulation } from './components/worldPopulation';
-const randomColorGenerator = ()=>{
-  let possibilities = "0123456789abcdef"
-  let color = '#'
-  for(let i=0;i<6;i++){
-    color += possibilities[Math.floor(Math.random() * 16)]
-  }
-  return color
-}
-const randomNumberGenerator = ()=>{
-  let random = Math.floor(Math.random() * 100)
-  return random
-}
-const fullArrayMethod = (method, times)=>{
-  let array = []
-  for(let i=0;i<times;i++){
-   let num = method()
-  !array.some((item)=> item === num) ? array.push(num) : i--
-  }
-  return array
-}
+import { tenHighestPopulation, fullArrayMethod, randomColorGenerator, randomNumberGenerator } from './components/dataAndFunctions';
+
 function App() {
   const numberArray = fullArrayMethod(randomNumberGenerator, 32)
   const hexaArray = fullArrayMethod(randomColorGenerator, 32)

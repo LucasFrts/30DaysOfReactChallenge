@@ -1,5 +1,5 @@
 import Progressbar from "./Progressbar"
-import { tenHighestPopulation } from "./worldPopulation"
+import { tenHighestPopulation } from "./dataAndFunctions"
 
 const CountryComponentStyle = {display:'flex', flexDirection:'row', justifyContent:'center', marginTop:'20px'}
 const numberMask = (string)=>{
@@ -17,7 +17,7 @@ const CountryComponent = ({data:{country, population}})=>{
 const WorldPopulationStyle = {display:'flex', flexWrap:'wrap', justifyContent:'center', flexDirection:'column'}
 const WorldPopulation = ({data})=>(
     <div style={{width:'80%', margin:'auto'}}>
-<div style={WorldPopulationStyle}>{data.map((country)=><CountryComponent key={country.country} data={country}/>)}</div>
+        <div style={WorldPopulationStyle}>{data.map((country)=><CountryComponent key={country.country} data={country}/>)}</div>
     </div>
 
 )
