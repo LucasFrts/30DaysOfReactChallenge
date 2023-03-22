@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import userImage from './assets/images/user.png'
 
+
+
 const showDate = (time)=>{
   const months = [
     'January',
@@ -87,6 +89,7 @@ const TechList = ({techs})=>{
 }
 
 const Main = ({techs, user, greetPeople, handleTime, changeBackground, count, addOne, minusOne, theme: {backgroundColor, color}})=>{
+  
   return(
     <main style={{minHeight: "70vh",  borderTop:'1px solid white', backgroundColor: backgroundColor, color:color }}>
       <div className="main-wrapper">
