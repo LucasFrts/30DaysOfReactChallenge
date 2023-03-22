@@ -123,12 +123,13 @@ function App() {
   const mes = months[date.getMonth()].slice(0, 3)
   const ano = date.getFullYear()
   const hora = date.getHours()
+  const minutos = date.getMinutes()
   const showDate = `${dia} ${mes}, ${ano}`
   return (
     <div style={styles} className="App">
       <div style={stylesFilter}>
         <h3>
-          Hora: {hora}
+          Hora: {hora}:{minutos < 10 ? (`0${minutos}`) : minutos}
         </h3>
         <h4>
           Dia: {showDate}
